@@ -1,5 +1,6 @@
 # myGoalsApp
-![2](https://github.com/jpineda48/myGoalsApp/assets/135978440/89137306-92ea-414f-84db-7d28e717b590)
+![APPHEADER](https://github.com/jpineda48/myGoalsApp/assets/135978440/c5dec9f4-fc77-4a74-87a6-7c3354bd5303)
+
 
 ### Overview
 MyGoals is an app designed to help users keep organize, track and achive goals. 
