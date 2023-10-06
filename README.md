@@ -27,7 +27,8 @@ MyGoals is an app designed to help users keep organize, track and achive goals.
 
 ## ERD
 
-<img width="806" alt="ERD" src="https://github.com/jpineda48/myGoalsApp/assets/135978440/00829c21-a15d-4cc4-875e-16161246afcb">
+<img width="810" alt="Screen Shot 2023-10-06 at 2 18 43 PM" src="https://github.com/jpineda48/myGoalsApp/assets/135978440/ce4e7b5d-ff8c-4605-b127-fe24d9fe2e5d">
+
 
 ## WIRE FRAMES
 
