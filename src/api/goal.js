@@ -24,5 +24,18 @@ export const getOneGoal = (user, id) => {
 
 }
 
+export const creatGoal = (user, newGoal) => {
+    return axios({
+        url: `${apiUrl}/goals`,
+        method:'POST',
+        headers: {
+            Authorization: `Token token=${user.token}`
+
+        },
+        data:{ goal: newGoal}
+
+    })
+}
+
 
 

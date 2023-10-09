@@ -13,6 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowGoal from './components/goals/GoalShow'
+import GoalCreate from './components/goals/GoalCreate'
 
 const App = () => {
 
@@ -69,9 +70,16 @@ const App = () => {
                 <ChangePassword msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
+		  <Route path='/create-goal' element={
+			<RequireAuth user={user}>
+				<GoalCreate user={user} msgAlert={msgAlert}/>
+				</RequireAuth>}
+		  
+		  />
 		  <Route path='goals/:id' element={
+				<RequireAuth user={user}>
 				<ShowGoal user={user} msgAlert={msgAlert}/>
-		  }
+				</RequireAuth>}
 		  
 		  />
 				</Routes>

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import {Card} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import messages from '../shared/AutoDismissAlert/messages'
+import LoadingScreen from '../shared/LoadingScreen';
 
 const cardContainerLayout = {
     display:'flex',
@@ -36,9 +37,9 @@ const GoalsIndex = (props) => {
     }, [])
 
     if(error) {
-        return <p>Error!</p>
+        return <LoadingScreen/>
     } if (!goals) {
-        return <p>Loading....</p>
+        return <LoadingScreen/>
     } else if (goals.length === 0) {
         return <p> no goals yet go add some!</p>
     }
