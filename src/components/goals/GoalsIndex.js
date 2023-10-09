@@ -4,7 +4,15 @@ import {Card} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import messages from '../shared/AutoDismissAlert/messages'
 
+const cardContainerLayout = {
+    display:'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'center'
+
+}
+
 const GoalsIndex = (props) => {
+    const { user } = props
     const [goals, setGoals] = useState(null)
     const [error, setError] = useState(false)
     const { msgAlert } = props
@@ -12,10 +20,10 @@ const GoalsIndex = (props) => {
 
 
     useEffect(() => {
-        getAllGoals()
+        getAllGoals(user)
             .then(res => {
                 console.log('thegoals', res.data.goals)
-                // setGoals(res.data.goals)
+                setGoals(res.data.goals)
             }) 
             .catch(err => {
                 msgAlert({
@@ -36,7 +44,7 @@ const GoalsIndex = (props) => {
     }
 
     const goalCards = goals.map(goal => (
-        <Card key= {goal.id}>
+        <Card key= {goal.id} style={{width:'30%', margin:5}}>
             <Card.Header>
                 {goal.title}
             </Card.Header>
@@ -45,7 +53,7 @@ const GoalsIndex = (props) => {
     
     
     return (
-        <div className="container-md">
+        <div className="container-md" style={cardContainerLayout}>
             {goalCards}
 
         </div>
