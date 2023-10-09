@@ -13,5 +13,16 @@ export const getAllGoals = (user) => {
         })
 }
 
+export const getOneGoal = (user, id) => {
+    return axios({
+        url: `${apiUrl}/goals/${id}`,
+        method:'GET',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        }     
+    })
+
+}
+
 
 

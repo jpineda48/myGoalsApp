@@ -44,10 +44,17 @@ const GoalsIndex = (props) => {
     }
 
     const goalCards = goals.map(goal => (
-        <Card key= {goal.id} style={{width:'30%', margin:5}}>
-            <Card.Header>
-                {goal.title}
-            </Card.Header>
+        <Card key= {goal._id} style={{width:'30%', margin:5}}>
+            <Card.Header> {goal.title }</Card.Header>
+            <Card.Body>
+                <Card.Text>
+                    <Link to= {`/goals/${goal._id}`} className='btn btn-info'>
+                    view {goal.title}
+                    </Link>
+                </Card.Text>
+            </Card.Body>
+               
+            
         </Card>
     ))
     
