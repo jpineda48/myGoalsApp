@@ -9,7 +9,11 @@ const messages = {
 	indexGoalsFailure: 'there are no goals set',
 	showGoalFailure: 'there isnt a goal here',
 	createGoalFailure: 'failed to create goal',
-	createGoalSucess: 'Goal Created!'
+	createGoalSucess: 'Goal Created!',
+	updateGoalSuccess:'Goal Created!',
+	updateGoalFailure:'failed to create goal',
+	removeGoalFailure:'failed to delete goal',
+	removeGoalSucess:'succeded in deleting goal',
 }
 
 module.exports = messages

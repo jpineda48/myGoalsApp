@@ -36,6 +36,28 @@ export const createGoal = (user, newGoal) => {
 
     })
 }
+export const updateGoal = (user, updatedGoal) => {
+    return axios({
+        url: `${apiUrl}/goals/${updatedGoal._id}`,
+        method:'PATCH',
+        headers: {
+            Authorization: `Token token=${user.token}`
 
+        },
+        data:{ goal: updatedGoal}
+
+    })
+}
+
+
+export const removeGoal = (user, goalId)=> {
+    return axios({
+        url: `${apiUrl}/goals/${goalId}`,
+        method: `DELETE`,
+        headers: {
+            Authorization: `Token token=${user.token}`
+        }
+    })
+}
 
 
