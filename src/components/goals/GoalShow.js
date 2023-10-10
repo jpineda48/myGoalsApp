@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import{ useParams} from 'react-router-dom'
-import { Container, Card } from 'react-bootstrap'
+import { Container, Card, CardFooter, Button } from 'react-bootstrap'
 import { getOneGoal } from '../../api/goal'
 import messages from '../shared/AutoDismissAlert/messages'
 
@@ -45,6 +45,14 @@ const ShowGoal = (props)  => {
                     <div>{goal.status}</div>
                 </Card.Text>
             </Card.Body>
+            <Card.Footer>
+                
+                
+                    <Button className='m-2'> Edit</Button>
+                    <Button className='m-2'>Delete</Button>
+                    
+                
+            </Card.Footer>
         </Card>
         
         </Container>

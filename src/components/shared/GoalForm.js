@@ -1,7 +1,6 @@
 ///form will take several props and be used by both create and update
 import { Form, Button, Container } from 'react-bootstrap'
-import { DatePicker } from 'react-datepicker'
-import { useState } from "react";
+
 
 
 
@@ -9,8 +8,8 @@ import { useState } from "react";
 
 
 const GoalForm = (props) => {
-  const [date, setDate] = useState(new Date());
-  console.log("DATE", date);
+
+ 
 
 
   const { goal, handleChange, handleSubmit, heading } = props
@@ -46,7 +45,7 @@ const GoalForm = (props) => {
                     <Form.Label>Start Date:</Form.Label>
                     <Form.Control 
                         placeholder="When are you starting this goal?"
-                        DatePicker id="start_date"
+                        id="start_date"
                         name="start_date"
                         value={ goal.start_date }
                         onChange={handleChange}
@@ -56,7 +55,7 @@ const GoalForm = (props) => {
                     <Form.Label>End Date:</Form.Label>
                     <Form.Control 
                         placeholder="When are you ending this goal?"
-                        DatePicker id="end_date"
+                        id="end_date"
                         name="end_date"
                         value={ goal.end_date }
                         onChange={handleChange}
