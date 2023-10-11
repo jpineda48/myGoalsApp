@@ -5,11 +5,22 @@ import { getOneGoal, updateGoal, removeGoal } from '../../api/goal'
 import {removeGoalFailure, removeGoalSucess, showGoalFailure }from '../shared/AutoDismissAlert/messages'
 import EditGoalModal from './EditGoalModal'
 import {useNavigate} from 'react-router-dom'
+import ActionShow from '../Actions/Actions'
+import NewActionModal from '../Actions/NewActionModal'
+
+
+const actionCardContainerLayout = {
+    display: 'flex',
+    justifyContent: 'center',
+    flexFlow: 'row wrap'
+
+}
 
 const ShowGoal = (props)  => {
     console.log('these are props in show goal', props)
     const [goal, setGoal] = useState(null)
     const [editModalShow, setEditModalShow] = useState(false)
+    const [actionModalShow, setActionModalShow] = useState(false)
     const [updates, setUpdates] = useState(false)
 
     const navigate = useNavigate()
@@ -51,6 +62,19 @@ const ShowGoal = (props)  => {
                 )
     }
 
+    let actionCards
+    if (goal) {
+        if (goal.actions.length > 0) {
+            actionCards = goal.actions.map(action => (
+                <ActionShow key={action.id}
+                action={action}
+                />
+            ))
+        } else {
+            actionCards = <p>start setting some actions</p>
+        }
+    }
+
     if(!goal){
         return <p>Loading...</p>
     } 
@@ -73,6 +97,12 @@ const ShowGoal = (props)  => {
                 </Card.Text>
             </Card.Body>
             <Card.Footer>
+
+                <Button className='m-2' variant='info'
+                onClick={() => setActionModalShow(true)}
+                >
+                    create and action
+                    </Button>
                 
                 
                     <Button 
@@ -91,12 +121,24 @@ const ShowGoal = (props)  => {
         </Card>
         
         </Container>
+
+        <Container className='m-2' style={actionCardContainerLayout }>
+            {actionCards}
+        </Container>
         <EditGoalModal 
             user={user}
             show={editModalShow}
             updateGoal={updateGoal}
             msgAlert={msgAlert}
             handleClose={() => setEditModalShow(false)}
+            triggerRefresh={() => setUpdates(prev =>!prev)}
+            goal={goal}
+        />
+        <NewActionModal 
+            user={user}
+            show={actionModalShow}
+            msgAlert={msgAlert}
+            handleClose={() => setActionModalShow(false)}
             triggerRefresh={() => setUpdates(prev =>!prev)}
             goal={goal}
         />
