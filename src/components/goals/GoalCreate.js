@@ -13,8 +13,7 @@ const GoalCreate = (props) => {
     const [goal, setGoal] = useState({
         catagory: '',
         title: '',
-        start_date: '',
-        end_date: '',
+        progress_measurement: '',
         description: '',
         status: ''
     })

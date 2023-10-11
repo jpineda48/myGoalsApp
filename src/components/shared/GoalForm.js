@@ -42,22 +42,12 @@ const GoalForm = (props) => {
                     />
                 </Form.Group>
                 <Form.Group className="m-2">
-                    <Form.Label>Start Date:</Form.Label>
+                    <Form.Label>Progress Measurement:</Form.Label>
                     <Form.Control 
                         placeholder="When are you starting this goal?"
-                        id="start_date"
-                        name="start_date"
-                        value={ goal.start_date }
-                        onChange={handleChange}
-                    />
-                </Form.Group>
-                <Form.Group className="m-2">
-                    <Form.Label>End Date:</Form.Label>
-                    <Form.Control 
-                        placeholder="When are you ending this goal?"
-                        id="end_date"
-                        name="end_date"
-                        value={ goal.end_date }
+                        id="progress_measurement"
+                        name="progress_measurement"
+                        value={ goal.progress_measurement }
                         onChange={handleChange}
                     />
                 </Form.Group>
@@ -79,9 +69,9 @@ const GoalForm = (props) => {
                         onChange={handleChange}
                     >
                         <option>Open this select menu</option>
-                        <option value="Started">Financial</option>
-                        <option value="In Progress">personal</option>
-                        <option value="Finished">Health</option>
+                        <option value="Not Started">Not Started</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Finished">Finished</option>
                     </Form.Select>
                 </Form.Group>
                 <Button className='m-2' type='submit'> Submit</Button>

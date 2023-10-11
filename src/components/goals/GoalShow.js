@@ -95,8 +95,7 @@ const ShowGoal = (props)  => {
             <Card.Body>
                 <Card.Text>
                     <div>{goal.catagory}</div>
-                    <div>{goal.start_date}</div>
-                    <div>{goal.end_date}</div>
+                    <div>{goal.progress_measurement}</div>
                     <div>{goal.description}</div>
                     <div>{goal.status}</div>
                 </Card.Text>
