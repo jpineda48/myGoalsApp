@@ -2,13 +2,14 @@ import React, {useState} from "react";
 import { Modal } from 'react-bootstrap'
 import ActionForm from "../shared/ActionForm";
 import { createAction } from "../../api/action";
-import { createActionFailure, createActionSuccess } from "../shared/AutoDismissAlert/messages";
+import { updateActionFailure, updateActionSuccess } from "../shared/AutoDismissAlert/messages";
+import { updateAction } from "../../api/action";
 
 
 
-const NewActionModal = (props) => {
+const EditActionModal = (props) => {
     const{ user, goal, show, handleClose, updateGoal, msgAlert, triggerRefresh} = props
-    const [action, setAction] = useState({})
+    const [action, setAction] = useState(props.action)
     const onChange = (e) => {
         e.persist()
         setAction(prevAction => {
@@ -24,12 +25,12 @@ const NewActionModal = (props) => {
 
      const onSubmit = (e) => {
         e.preventDefault()
-        createAction(goal._id, action)
+        updateAction( user, goal._id, action)
             .then(()=> handleClose())
             .then(() => {
                 msgAlert({
                     heading: 'oh yeah!',
-                    message: createActionSuccess,
+                    message: updateActionSuccess,
                     variant: 'sucess'
                 })
 
@@ -38,7 +39,7 @@ const NewActionModal = (props) => {
             .catch(() => {
                 msgAlert({
                     heading: 'oh no!',
-                    message: createActionFailure,
+                    message: updateActionFailure,
                     variant: 'danger'
                 })
             })
@@ -53,7 +54,7 @@ const NewActionModal = (props) => {
             action={action}
             handleChange={onChange}
             handleSubmit={onSubmit}
-            heading='Set a action to achive a goal'
+            heading='Update the Action'
 
             />
         </Modal.Header>
@@ -61,4 +62,4 @@ const NewActionModal = (props) => {
   )
 }
 
-export default NewActionModal
+export default EditActionModal

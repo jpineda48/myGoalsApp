@@ -5,7 +5,7 @@ import { getOneGoal, updateGoal, removeGoal } from '../../api/goal'
 import {removeGoalFailure, removeGoalSucess, showGoalFailure }from '../shared/AutoDismissAlert/messages'
 import EditGoalModal from './EditGoalModal'
 import {useNavigate} from 'react-router-dom'
-import ActionShow from '../Actions/Actions'
+import ActionShow from '../Actions/ActionShow'
 import NewActionModal from '../Actions/NewActionModal'
 
 
@@ -66,8 +66,13 @@ const ShowGoal = (props)  => {
     if (goal) {
         if (goal.actions.length > 0) {
             actionCards = goal.actions.map(action => (
-                <ActionShow key={action.id}
+                <ActionShow 
+                key={action.id}
                 action={action}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdates(prev =>!prev)}
+                user={user}
+                goal={goal}
                 />
             ))
         } else {

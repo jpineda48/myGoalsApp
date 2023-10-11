@@ -14,6 +14,12 @@ const messages = {
 	updateGoalFailure:'failed to create goal',
 	removeGoalFailure:'failed to delete goal',
 	removeGoalSucess:'succeded in deleting goal',
+	createActionFailure:'failed to create action',
+	createActionSuccess:'succeded in creating',
+	updateActionFailure:'failed to create action',
+	updateActionSuccess:'succeded in creating',
+	removeActionFailure:'failed to delete action',
+	removeActionSuccess:'succeded in deleting action',
 }
 
 module.exports = messages
