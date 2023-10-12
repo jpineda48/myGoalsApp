@@ -30,6 +30,8 @@ MyGoals is an app designed to help users keep organize, track and achive goals.
 
 <img width="810" alt="Screen Shot 2023-10-06 at 2 18 43 PM" src="https://github.com/jpineda48/myGoalsApp/assets/135978440/ce4e7b5d-ff8c-4605-b127-fe24d9fe2e5d">
 
+## COLOR-SCHEME
+<img width="349" alt="Screen Shot 2023-10-11 at 8 12 51 PM" src="https://github.com/jpineda48/myGoalsApp/assets/135978440/0dedfb2f-4aa9-4bd0-9bcc-fd80230e0997">
 
 ## WIRE FRAMES
 
