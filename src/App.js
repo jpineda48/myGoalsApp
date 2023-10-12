@@ -14,6 +14,9 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowGoal from './components/goals/GoalShow'
 import GoalCreate from './components/goals/GoalCreate'
+import EntriesIndex from './components/Journal/Entries_Index'
+import EntryShow from './components/Journal/EntryShow'
+
 
 const App = () => {
 
@@ -52,58 +55,70 @@ const App = () => {
 	}
 
 		return (
-			<Fragment>
-				<Header user={user} />
-				<Routes>
-					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
-					<Route
-						path='/sign-up'
-						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
-					/>
-					<Route
-						path='/sign-in'
-						element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
-					/>
-          <Route
-            path='/sign-out'
-            element={
-              <RequireAuth user={user}>
-                <SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path='/change-password'
-            element={
-              <RequireAuth user={user}>
-                <ChangePassword msgAlert={msgAlert} user={user} />
-              </RequireAuth>}
-          />
-		  <Route path='/create-goal' element={
-			<RequireAuth user={user}>
-				<GoalCreate user={user} msgAlert={msgAlert}/>
-				</RequireAuth>}
-		  
-		  />
-		  <Route path='goals/:id' element={
-				<RequireAuth user={user}>
-				<ShowGoal user={user} msgAlert={msgAlert}/>
-				</RequireAuth>}
-		  
-		  />
-				</Routes>
-				{msgAlerts.map((msgAlert) => (
-					<AutoDismissAlert
+				<Fragment>
+					<Header user={user} />
+						<Routes>
+							<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+							<Route
+								path='/sign-up'
+								element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
+								/>
+							<Route
+								path='/sign-in'
+								element={<SignIn msgAlert={msgAlert} setUser={setUser} />}
+								/>
+							<Route
+								path='/sign-out'
+								element={
+								<RequireAuth user={user}>
+								<SignOut msgAlert={msgAlert} clearUser={clearUser} user={user} />
+								</RequireAuth>
+								}
+								/>
+							<Route
+								path='/change-password'
+								element={
+								<RequireAuth user={user}>
+								<ChangePassword msgAlert={msgAlert} user={user} />
+								</RequireAuth>}
+								/>
+							<Route path='/create-goal' element={
+								<RequireAuth user={user}>
+								<GoalCreate user={user} msgAlert={msgAlert}/>
+								</RequireAuth>}
+
+								/>
+							<Route path='goals/:id' element={
+								<RequireAuth user={user}>
+								<ShowGoal user={user} msgAlert={msgAlert}/>
+								</RequireAuth>}
+
+								/>
+							<Route path='journal' element={
+								<RequireAuth user={user}>
+								<EntriesIndex user={user} msgAlert={msgAlert}/>
+								</RequireAuth>}
+
+								/>
+							<Route path='journal/:id' element={
+								<RequireAuth user={user}>
+								<EntryShow user={user} msgAlert={msgAlert}/>
+								</RequireAuth>}
+
+								/>
+						</Routes>
+						{msgAlerts.map((msgAlert) => (
+						<AutoDismissAlert
 						key={msgAlert.id}
 						heading={msgAlert.heading}
 						variant={msgAlert.variant}
 						message={msgAlert.message}
 						id={msgAlert.id}
 						deleteAlert={deleteAlert}
-					/>
-				))}
-			</Fragment>
-		)
+						/>
+					))}
+				</Fragment>
+			)
 }
 
 export default App

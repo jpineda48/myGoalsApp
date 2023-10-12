@@ -13,7 +13,7 @@ const Home = (props) => {
 	return (
 		
 		<Container className="m-2" style={{textAlign: 'center'}}>
-			<h2>Home Page</h2>
+			<h2 style={{fontSize:'4rem'}}>Home Page</h2>
 			<GoalsIndex msgAlert={msgAlert} user={user}/>
 		</Container>
 	) 

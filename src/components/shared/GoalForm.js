@@ -26,9 +26,15 @@ const GoalForm = (props) => {
                         onChange={handleChange}
                     >
                         <option>Open this select menu</option>
+                        <option value="Personal">Personal</option>
                         <option value="Financial">Financial</option>
-                        <option value="Personal">personal</option>
+                        <option value="Learning">Learning</option>
+                        <option value="Leisure">Leisure</option>
                         <option value="Health">Health</option>
+                        <option value="Family">Family</option>
+                        <option value="Relationship">Relationship</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                        <option value="Other">Other</option>
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="m-2">
@@ -54,6 +60,7 @@ const GoalForm = (props) => {
                 <Form.Group className="m-2">
                     <Form.Label>Decription:</Form.Label>
                     <Form.Control 
+                        as="textarea" rows={5}
                         placeholder="Describe this goal?"
                         id="description"
                         name="description"
@@ -62,6 +69,7 @@ const GoalForm = (props) => {
                     />
                 </Form.Group>
                 <Form.Group className="m-2">
+                <Form.Label>Goal Status:</Form.Label>
                     <Form.Select 
                         aria-label="status"
                         name="status"
