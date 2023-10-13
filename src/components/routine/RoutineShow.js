@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
-import{ useParams, Link} from 'react-router-dom'
+import{ useParams} from 'react-router-dom'
 import { Container, Card, CardFooter, Button } from 'react-bootstrap'
-import { getOneEntry, updateEntry, removeEntry } from '../../api/journal'
+import { getOneRoutine, updateRoutine, removeRoutine } from '../../api/routine'
 import {removeGoalFailure, removeGoalSucess, showGoalFailure }from '../shared/AutoDismissAlert/messages'
-import EditEntryModal from './EditEntryModal'
+import EditRoutineModal from './EditRoutineModal'
 import {useNavigate} from 'react-router-dom'
-
 
 
 
@@ -16,74 +15,72 @@ const actionCardContainerLayout = {
 
 }
 
-const EntryShow = (props)  => {
-    const [entry, setEntry] = useState(null)
-    const [editModalShow, setEditModalShow] = useState(false)
+const ShowRoutine = (props)  => {
+    console.log('these are props in show routine', props)
+    const [routine, setRoutine] = useState(null)
+    const [editRoutineShow, setEditModalShow] = useState(false)
     const [updates, setUpdates] = useState(false)
+
     const navigate = useNavigate()
+
     const {id } = useParams()
     const { user, msgAlert } = props
 
-    console.log('these are the entries in show', entry)
-
-    
+    console.log('this is the id', id)
     useEffect(() => {
-        getOneEntry(user, id)
-            .then(res => setEntry(res.data.entry))
+        getOneRoutine(user, id)
+            .then(res => setRoutine(res.data.routine))
             .catch (err => {
                 msgAlert({
-                    heading: 'Error Getting Entries',
+                    heading: 'error getting goal',
+                    message: showGoalFailure,
                     varient: 'danger'
                 })
             })
 
     }, [updates])
 
-    const deleteEntry = () =>{
-        removeEntry(user, entry._id)
+    const deleteRoutine = () =>{
+        removeRoutine(user, routine._id)
             .then(() => 
                 msgAlert({
                     heading:'removed successfuly',
+                    message: removeGoalSucess,
                     variant: 'success'
                 })
             )
                 .then(() => navigate('/'))
                 .catch(() => 
                 msgAlert({
-                    heading:'Unable to Remove',
+                    heading:'oh no!',
+                    message: removeGoalFailure,
                     variant: 'danger'
                 })
                
                 )
     }
-    const date = ()=>{
-        const date = entry.createdAt
-        const newDate =(new Date(date)).toDateString()
-        console.log('this is new date', newDate)
-        return newDate
-    }
 
+  
 
-    if(!entry){
+    if(!routine){
         return <p>Loading...</p>
     } 
+
+
+    //need to pull ud from url
 
     return (
         <>
        <Container className='m-2'>
         <Card>
-            <Card.Header>{date()}<br/>{entry.title}</Card.Header>
+            <Card.Header><span style={{color: "red", fontSize:'2rem'}}>The Task:</span> {routine.task}</Card.Header>
             <Card.Body>
                 <Card.Text>
-                    {entry.body}
-                    
-                   
-                    
+                 
                 </Card.Text>
             </Card.Body>
             <Card.Footer>
 
-          
              
                 
                 
@@ -94,29 +91,29 @@ const EntryShow = (props)  => {
                     </Button>
                     <Button 
                         className='m-2'
-                        onClick={()=> deleteEntry()}>
+                        onClick={()=> deleteRoutine()}>
                         Delete
                     </Button>
                     
                 
             </Card.Footer>
         </Card>
-        <Button><Link to={'/journal'} style={{color:'white', textDecoration:'none'}}>View All Entries</Link></Button>
         
         </Container>
 
-       
-        <EditEntryModal 
+      
+        <EditRoutineModal 
             user={user}
-            show={editModalShow}
-            updateEntry={updateEntry}
+            show={editRoutineShow}
+            updateRoutine={updateRoutine}
             msgAlert={msgAlert}
             handleClose={() => setEditModalShow(false)}
             triggerRefresh={() => setUpdates(prev =>!prev)}
-            entry={entry}
+            routine={routine}
         />
+        
         </>
     )
 }
 
-export default EntryShow
+export default ShowRoutine

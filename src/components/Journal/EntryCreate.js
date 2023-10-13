@@ -51,12 +51,19 @@ const EntryCreate = (props) => {
 
  }
     return(
+        <>
+        <br/>
+        <small className='m-4'>Through reflection and introspection, journaling helps you to get to know yourself better.</small>
+        <br/>
+        <br/>
+        <br/>
         <EntryForm 
         entry={entry} 
         handleChange={onChange} 
         handleSubmit={onSubmit}
         heading="add a new goal"
         />
+        </>
     )
 
 }

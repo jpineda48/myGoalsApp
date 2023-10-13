@@ -7,10 +7,13 @@ import LoadingScreen from '../shared/LoadingScreen';
 
 const cardContainerLayout = {
     display:'flex',
-    flexFlow: 'row wrap',
-    justifyContent: 'center'
-
+    flexFlow: 'column',
+    justifyContent: 'start',
+    fontSize: '20px',
+  
 }
+
+
 
 const GoalsIndex = (props) => {
     const { user } = props
@@ -44,25 +47,33 @@ const GoalsIndex = (props) => {
         return <p> no goals yet go add some!</p>
     }
 
-    const goalCards = goals.map(goal => (
-        <Card key= {goal._id} style={{width:'30%', margin:5}}>
-            <Card.Header> {goal.title }</Card.Header>
-            <Card.Body>
-                <Card.Text>
-                    <Link to= {`/goals/${goal._id}`} className='btn btn-info'>
-                    view {goal.title}
-                    </Link>
-                </Card.Text>
-            </Card.Body>
-               
-            
-        </Card>
-    ))
+    const categorizedGoals = {
+        'In Progress': goals.filter(goal => goal.status === 'In Progress'),
+        'Finished': goals.filter(goal => goal.status === 'Finished'),
+        'Not Started': goals.filter(goal => goal.status === 'Not Started')
+        
+      };
+      
+      const renderedGoals = Object.keys(categorizedGoals).map(category => (
+        <div key={category}>
+          <h2 style ={{color:'grey', fontSize:'15px'}}>{category}</h2>
+          <ul style={{ listStyleType: 'none'}}className={cardContainerLayout}>
+            {categorizedGoals[category].map(goal => (
+              <li key={goal._id}>
+                <Link to={`/goals/${goal._id}`}>
+                  {goal.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ));
+    
     
     
     return (
         <div className="container-md" style={cardContainerLayout}>
-            {goalCards}
+            {renderedGoals}
 
         </div>
     )

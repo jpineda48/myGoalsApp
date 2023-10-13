@@ -1,39 +1,36 @@
 import { useState } from 'react'
-import {createGoal } from '../../api/goal'
+import { createRoutine } from '../../api/routine'
 import { createGoalFailure, createGoalSucess } from '../shared/AutoDismissAlert/messages'
-import GoalForm from '../shared/GoalForm'
+import RoutineForm from '../shared/RoutineForm'
 import { useNavigate } from 'react-router-dom'
 
 
-const GoalCreate = (props) => {
+const RoutineCreate = (props) => {
     const {user, msgAlert} = props
 
     const navigate = useNavigate()
 
-    const [goal, setGoal] = useState({
-        catagory: '',
-        title: '',
-        progress_measurement: '',
-        description: '',
-        status: ''
+    const [routine, setRoutine] = useState({
+        task: '',
+        time_of_day: ''
     })
 
     const onChange = (e) => {
     e.persist()
-    setGoal(prevGoal => {
+    setRoutine(prevRoutine=> {
         const updatedName= e.target.name
         const updatedValue= e.target.value
 
-        const updatedGoal = {[updatedName ]: updatedValue}
+        const updatedRoutine = {[updatedName ]: updatedValue}
         return{
-            ...prevGoal, ...updatedGoal
+            ...prevRoutine, ...updatedRoutine
         }
     })
  }
  const onSubmit = (e) => {
     e.preventDefault()
-    createGoal(user, goal)
-        .then(res => { navigate(`/goals/${res.data.goal._id}`)})
+    createRoutine(user, routine)
+        .then(res => { navigate(`/routine/${res.data.routine._id}`)})
         .then(() => {
             msgAlert({
                 heading: 'Goal Created!',
@@ -58,15 +55,15 @@ const GoalCreate = (props) => {
         <br/>
         <br/>
         <br/>
-        <GoalForm 
-        goal={goal} 
+        <RoutineForm
+        routine={routine} 
         handleChange={onChange} 
         handleSubmit={onSubmit}
-        heading="add a new goal"
+        heading="add a new task"
         />
         </>
     )
 
 }
 
-export default GoalCreate
+export default RoutineCreate

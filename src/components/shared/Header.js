@@ -21,6 +21,11 @@ const authenticatedOptions = (
 				Create Goal
 			</Link>
 		</Nav.Item>
+		<Nav.Item className='m-3'>
+			<Link to='routine' style={linkStyle}>
+				Create Routine
+			</Link>
+		</Nav.Item>
 		
 		<Nav.Item className='m-3'>
 			<Link to='journal' style={linkStyle}>

@@ -16,6 +16,9 @@ import ShowGoal from './components/goals/GoalShow'
 import GoalCreate from './components/goals/GoalCreate'
 import EntriesIndex from './components/Journal/Entries_Index'
 import EntryShow from './components/Journal/EntryShow'
+import RoutineCreate from './components/routine/RoutineCreate'
+import ShowRoutine from './components/routine/RoutineShow'
+
 
 
 const App = () => {
@@ -103,6 +106,18 @@ const App = () => {
 							<Route path='journal/:id' element={
 								<RequireAuth user={user}>
 								<EntryShow user={user} msgAlert={msgAlert}/>
+								</RequireAuth>}
+
+								/>
+								<Route path='routine' element={
+								<RequireAuth user={user}>
+								<RoutineCreate user={user} msgAlert={msgAlert}/>
+								</RequireAuth>}
+
+								/>
+								<Route path='routine/:id' element={
+								<RequireAuth user={user}>
+								<ShowRoutine user={user} msgAlert={msgAlert}/>
 								</RequireAuth>}
 
 								/>

@@ -39,6 +39,12 @@ const EntriesIndex = (props) => {
                 setError(true)
             })
     }, [])
+    // const date = ()=>{
+    //     const date = entry.createdAt
+    //     const newDate =(new Date(date)).toDateString()
+    //     console.log('this is new date', newDate)
+    //     return newDate
+    // }
 
     if(!user) {
         navigate('/')
@@ -51,7 +57,7 @@ const EntriesIndex = (props) => {
 
     const entryCards = entries.map(entry => (
         <Card key= {entry._id} style={{width:'30%', margin:5}}>
-            <Card.Header> {entry.title }</Card.Header>
+            <Card.Header> {(new Date(entry.createdAt)).toDateString()} <br/>{entry.title } </Card.Header>
             <Card.Body>
                 <Card.Text>
                     <Link to= {`/journal/${entry._id}`} className='btn btn-info'>
