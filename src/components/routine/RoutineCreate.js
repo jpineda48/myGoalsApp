@@ -51,7 +51,7 @@ const RoutineCreate = (props) => {
     return(
         <>
         <br/>
-        <small className='m-4'>Knowing your values and setting clear goals based on those values will help you live more intentionally. </small>
+        <small className='m-4' style={{color:'red'}}>Tips for Creating a Healthy Routine </small>
         <br/>
         <br/>
         <br/>

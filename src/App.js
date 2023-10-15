@@ -18,6 +18,7 @@ import EntriesIndex from './components/Journal/Entries_Index'
 import EntryShow from './components/Journal/EntryShow'
 import RoutineCreate from './components/routine/RoutineCreate'
 import ShowRoutine from './components/routine/RoutineShow'
+import ImageUpload from './components/Images/ImageUpload'
 
 
 
@@ -59,6 +60,11 @@ const App = () => {
 
 		return (
 				<Fragment>
+					<h1 style={{textAlign:'center', padding:'20px'}}>MyGoals</h1>
+					<hr/>
+					{/* {user && (
+					<span className='navbar-text' style={{fontSize:'1rem', color:'black',}}>Welcome, {user.email}</span>
+				)} */}
 					<Header user={user} />
 						<Routes>
 							<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
@@ -121,6 +127,14 @@ const App = () => {
 								</RequireAuth>}
 
 								/>
+								<Route path='moods' element={
+								<RequireAuth user={user}>
+								<ImageUpload user={user} msgAlert={msgAlert}/>
+								</RequireAuth>}
+
+								/>
+								
+								
 						</Routes>
 						{msgAlerts.map((msgAlert) => (
 						<AutoDismissAlert
@@ -132,6 +146,7 @@ const App = () => {
 						deleteAlert={deleteAlert}
 						/>
 					))}
+					
 				</Fragment>
 			)
 }

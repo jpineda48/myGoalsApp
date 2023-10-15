@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 const linkStyle = {
-    color: 'white',
+    color: 'black',
     textDecoration: 'none'
 	
 }
@@ -11,14 +11,15 @@ const linkStyle = {
 
 const authenticatedOptions = (
 	<>
-		<Nav.Item className='m-3'>
-			<Link to='change-password' style={linkStyle} >
-				Change Password
-			</Link>
-		</Nav.Item>
+		
 		<Nav.Item className='m-3'>
 			<Link to='create-goal' style={linkStyle}>
 				Create Goal
+			</Link>
+		</Nav.Item>
+		<Nav.Item className='m-3'>
+			<Link to='moods' style={linkStyle}>
+				Moods
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
@@ -33,10 +34,16 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
+			<Link to='change-password' style={linkStyle} >
+				Change Password
+			</Link>
+		</Nav.Item>
+		<Nav.Item className='m-3'>
 			<Link to='sign-out' style={linkStyle}>
 				Sign Out
 			</Link>
 		</Nav.Item>
+		
 	</>
 )
 
@@ -62,23 +69,17 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-	<Navbar style={{backgroundColor:'rgba(22, 96, 124, 1)' }} variant='dark' expand='md'>
-		<Navbar.Brand className='m-4'>
-            <Link to='/' style={{color: 'white', fontFamily:'DM Serif Display serif', fontSize: '4rem', textDecoration:'none', lineHeight: '0'}}>
-                MyGoals <br/>
-				{user && (
-					<span className='navbar-text' style={{fontSize:'1rem'}}>Welcome, {user.email}</span>
-				)}
-            </Link>
-        </Navbar.Brand>
+	<Navbar style={{textAlign:'center', backgroundColor:'white' }} variant='dark' expand='md'>
+	
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
 		<Navbar.Collapse id='basic-navbar-nav'>
-			<Nav className='ml-auto'>
+			<Nav className='ml-auto' >
 				{alwaysOptions}
 				{user ? authenticatedOptions : unauthenticatedOptions}
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>
+
 )
 
 export default Header
