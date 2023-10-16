@@ -46,9 +46,9 @@ const ImageUpload = () => {
         <input type='file' accept='image/*' onChange={onInputChange}></input>
         <button type='submit'>Submit</button>
       </form>
-     {allImage.map((data) => {
+     {/* {allImage.map((data) => {
         return <img src={data.image} alt="moods" />
-     })}
+     })} */}
     
     </div>
   )

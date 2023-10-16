@@ -14,33 +14,33 @@ const authenticatedOptions = (
 		
 		<Nav.Item className='m-3'>
 			<Link to='create-goal' style={linkStyle}>
-				Create Goal
+				SET A GOAL
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
 			<Link to='moods' style={linkStyle}>
-				Moods
+				INSPIRATION
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
 			<Link to='routine' style={linkStyle}>
-				Create Routine
+				ADD TO YOUR ROUTINE
 			</Link>
 		</Nav.Item>
 		
 		<Nav.Item className='m-3'>
 			<Link to='journal' style={linkStyle}>
-				My Journal
+				JOURNAL
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
 			<Link to='change-password' style={linkStyle} >
-				Change Password
+				CHANGE PASSWORD
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
 			<Link to='sign-out' style={linkStyle}>
-				Sign Out
+				SIGN OUT
 			</Link>
 		</Nav.Item>
 		
@@ -50,10 +50,10 @@ const authenticatedOptions = (
 const unauthenticatedOptions = (
 	<>
         <Nav.Item className='m-3'>
-		    <Link to='sign-up' style={linkStyle}>Sign Up</Link>
+		    <Link to='sign-up' style={linkStyle}>SIGN UP</Link>
         </Nav.Item>
         <Nav.Item className='m-3'>
-		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
+		    <Link to='sign-in' style={linkStyle}>SIGN IN</Link>
         </Nav.Item>
 	</>
 )
@@ -62,7 +62,7 @@ const alwaysOptions = (
 	<>
 		<Nav.Item className='m-3'>
 			<Link to='/' style={linkStyle}>
-				Home
+				HOME
 			</Link>
 		</Nav.Item>
 	</>
@@ -73,7 +73,7 @@ const Header = ({ user }) => (
 	
 		<Navbar.Toggle aria-controls='basic-navbar-nav' />
 		<Navbar.Collapse id='basic-navbar-nav'>
-			<Nav className='ml-auto' >
+			<Nav className='m-auto' >
 				{alwaysOptions}
 				{user ? authenticatedOptions : unauthenticatedOptions}
 			</Nav>

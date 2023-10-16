@@ -47,7 +47,7 @@ const EntryShow = (props)  => {
                     variant: 'success'
                 })
             )
-                .then(() => navigate('/'))
+                .then(() => navigate('/journal'))
                 .catch(() => 
                 msgAlert({
                     heading:'Unable to Remove',

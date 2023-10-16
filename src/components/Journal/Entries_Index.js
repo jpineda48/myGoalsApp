@@ -56,18 +56,29 @@ const EntriesIndex = (props) => {
     } 
 
     const entryCards = entries.map(entry => (
-        <Card key= {entry._id} style={{width:'30%', margin:5}}>
-            <Card.Header> {(new Date(entry.createdAt)).toDateString()} <br/>{entry.title } </Card.Header>
-            <Card.Body>
-                <Card.Text>
-                    <Link to= {`/journal/${entry._id}`} className='btn btn-info'>
-                    view {entry.title}
-                    </Link>
-                </Card.Text>
-            </Card.Body>
+  
+        <div className='m-2 rounded-1' style={{width:'30%',backgroundColor:'#fdf86d', backgroundImage: 'linear-gradient(315deg, #fdf86d 0%, #bddcf1 74%)'}}>
+            <h4 className="m-3" style={{fontStyle: 'italic'}}>{entry.title }</h4>
+            <h5 className="m-3">{(new Date(entry.createdAt)).toDateString()}</h5>
+            <Link className="m-3 border border-black p-1" style={{textDecoration:'none', color:'black'}} to= {`/journal/${entry._id}`} >
+                    VIEW ENTRY
+                     </Link>
+        </div>
+      
+      
+      
+        // <Card key= {entry._id} style={{width:'30%', margin:5}}>
+        //     <Card.Header> {entry.title }<br/>{(new Date(entry.createdAt)).toDateString()}  </Card.Header>
+        //     <Card.Body>
+        //         <Card.Text>
+        //             <Link to= {`/journal/${entry._id}`} >
+        //             view {entry.title}
+        //             </Link>
+        //         </Card.Text>
+        //     </Card.Body>
                
             
-        </Card>
+        // </Card>
     ))
     
     

@@ -7,11 +7,12 @@ const EntryForm = (props) => {
   return (
     <div>
         <Container className='justify-content-center'>
-        <h3>Add an Entry</h3>
+        <h5>CREATE AN ENTRY</h5>
         <Form onSubmit={handleSubmit}>
                 <Form.Group className="m-2">
                     <Form.Label>Title:</Form.Label>
                     <Form.Control 
+                        style={{fontStyle: 'italic'}}
                         placeholder="title of entry?"
                         id="title"
                         name="title"
@@ -22,8 +23,9 @@ const EntryForm = (props) => {
                 <Form.Group className="m-2">
                     <Form.Label>body:</Form.Label>
                     <Form.Control 
+                        style={{fontStyle: 'italic'}}
                         as="textarea" rows={5}
-                        placeholder="Title of Goal?"
+                        placeholder="what do you want to write about?"
                         id="body"
                         name="body"
                         value={ entry.body }
@@ -33,7 +35,7 @@ const EntryForm = (props) => {
                 
               
                
-                <Button className='m-2' type='submit'> Submit</Button>
+                <Button className='m-2' style={{backgroundColor:'teal', border:'teal'}} type='submit'> Submit</Button>
                 
 
         </Form>
