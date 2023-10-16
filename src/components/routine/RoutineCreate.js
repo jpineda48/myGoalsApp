@@ -34,14 +34,14 @@ const RoutineCreate = (props) => {
         .then(() => {
             msgAlert({
                 heading: 'Action Created!',
-                message: createGoalSucess,
+                
                 variant: 'success'
             })
         })
         .catch(()=>{
             msgAlert({
                 heading: 'Oh No!',
-                message: createGoalFailure,
+                
                 variant: 'danger'
             })
         })

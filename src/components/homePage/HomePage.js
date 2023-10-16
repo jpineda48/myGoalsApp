@@ -8,9 +8,9 @@ const HomePage = () => {
 
     const fontStyle ={
         fontSize:'60px',
-        color: 'teal',
+        color: 'black',
         fontFamily:'PT Serif, serif',
-        textShadow: '2px 2px black',
+        textShadow: '2px 2px white',
         textAlign:'left'
         
         
@@ -59,7 +59,8 @@ const HomePage = () => {
         />
         <Carousel.Caption>
           <div style={fontStyle }>
-            <p>Keep Track of Visions and Thoughts</p>
+            <p>Keep Track of Personal Visions and Thoughts</p>
+            <br/>
           </div>
           
           
