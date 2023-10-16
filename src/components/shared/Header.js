@@ -14,33 +14,33 @@ const authenticatedOptions = (
 		
 		<Nav.Item className='m-3'>
 			<Link to='create-goal' style={linkStyle}>
-				SET A GOAL
+				| &nbsp; SET A GOAL
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
 			<Link to='moods' style={linkStyle}>
-				INSPIRATION
+			| &nbsp; INSPIRATION 
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
 			<Link to='routine' style={linkStyle}>
-				ADD TO YOUR ROUTINE
+			| &nbsp; ADD TO YOUR ROUTINE 
 			</Link>
 		</Nav.Item>
 		
 		<Nav.Item className='m-3'>
 			<Link to='journal' style={linkStyle}>
-				JOURNAL
+			| &nbsp; JOURNAL 
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
 			<Link to='change-password' style={linkStyle} >
-				CHANGE PASSWORD
+			| &nbsp; CHANGE PASSWORD 
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
 			<Link to='sign-out' style={linkStyle}>
-				SIGN OUT
+			| &nbsp; SIGN OUT 
 			</Link>
 		</Nav.Item>
 		
@@ -50,10 +50,13 @@ const authenticatedOptions = (
 const unauthenticatedOptions = (
 	<>
         <Nav.Item className='m-3'>
-		    <Link to='sign-up' style={linkStyle}>SIGN UP</Link>
+		    <Link to='sign-up' style={linkStyle}>
+				</Link>
         </Nav.Item>
         <Nav.Item className='m-3'>
-		    <Link to='sign-in' style={linkStyle}>SIGN IN</Link>
+		    <Link to='sign-in' style={linkStyle}>
+			| &nbsp; SIGN IN 
+				</Link>
         </Nav.Item>
 	</>
 )
@@ -62,7 +65,7 @@ const alwaysOptions = (
 	<>
 		<Nav.Item className='m-3'>
 			<Link to='/' style={linkStyle}>
-				HOME
+			HOME 
 			</Link>
 		</Nav.Item>
 	</>

@@ -7,15 +7,17 @@ import Carousel from 'react-bootstrap/Carousel';
 const HomePage = () => {
 
     const fontStyle ={
-        color:'white',
-        background: 'black',
-        opacity: '0.5',
-        fontSize:'40px'
+        fontSize:'60px',
+        color: 'yellow',
+        fontFamily:'PT Serif, serif',
+        textShadow: '2px 2px black',
+        textAlign:'left'
+        
         
     }
   return (
     <div>
-     <Carousel data-bs-theme="dark">
+     <Carousel data-bs-theme="dark" class="carousel slide" data-ride="carousel" data-interval="1000" >
       <Carousel.Item>
         <img
           className="d-block m-auto rounded-1"
@@ -25,7 +27,7 @@ const HomePage = () => {
         />
         <Carousel.Caption>
           <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <p >Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -37,8 +39,10 @@ const HomePage = () => {
         />
         <Carousel.Caption>
             <div style={fontStyle }>
-                <h5>Second slide label</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                
+                <p >Set intentions through goals.</p>
+                <br/>
+                <br/>
             </div>
           
         </Carousel.Caption>

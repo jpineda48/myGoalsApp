@@ -70,9 +70,29 @@ const EntryShow = (props)  => {
 
     return (
         <>
-       <Container className='m-2'>
-        <Card>
-            <Card.Header>{date()}<br/>{entry.title}</Card.Header>
+       <Container className='m-4'>
+       <hr/>
+       <hr/>
+        <div>
+            <h1 className='p-4' style={{backgroundColor:'#fdf86d', backgroundImage: 'linear-gradient(315deg, #fdf86d 0%, #bddcf1 74%)', fontSize:'20px'}}> <span style={{fontFamily:'PT Serif, serif', fontSize:'30px'}}>{entry.title}</span><br/><br/>{date()}</h1>
+        </div>
+        <div>
+        <p className='p-3' style={{fontSize:'25px'}}>{entry.body}</p>
+        </div>
+        <Button 
+            style={{backgroundColor:'black', border:'black'}}
+            className='m-2'
+            onClick={() => setEditModalShow(true)}> 
+            Edit
+        </Button>
+        <Button 
+            style={{backgroundColor:'black', border:'black'}}
+            className='m-2'
+            onClick={()=> deleteEntry()}>
+            Delete
+        </Button>
+        {/* <Card>
+            <Card.Header style={{backgroundColor:'#fdf86d', backgroundImage: 'linear-gradient(315deg, #fdf86d 0%, #bddcf1 74%)', fontSize:'20px'}}>{entry.title}<br/>{date()}</Card.Header>
             <Card.Body>
                 <Card.Text>
                     {entry.body}
@@ -81,7 +101,7 @@ const EntryShow = (props)  => {
                     
                 </Card.Text>
             </Card.Body>
-            <Card.Footer>
+            <Card.Footer style={{backgroundColor:'white'}}>
 
           
              
@@ -100,8 +120,8 @@ const EntryShow = (props)  => {
                     
                 
             </Card.Footer>
-        </Card>
-        <Button><Link to={'/journal'} style={{color:'white', textDecoration:'none'}}>View All Entries</Link></Button>
+        </Card> */}
+        <Button style={{backgroundColor:'black', border:'black'}}><Link to={'/journal'} style={{color:'white', textDecoration:'none'}}>View All Entries</Link></Button>
         
         </Container>
 

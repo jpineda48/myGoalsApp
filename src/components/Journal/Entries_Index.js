@@ -57,12 +57,13 @@ const EntriesIndex = (props) => {
 
     const entryCards = entries.map(entry => (
   
-        <div className='m-2 rounded-1' style={{width:'30%',backgroundColor:'#fdf86d', backgroundImage: 'linear-gradient(315deg, #fdf86d 0%, #bddcf1 74%)'}}>
+        <div className='m-2 rounded-1 mb-5' style={{width:'30%',backgroundColor:'#fdf86d', backgroundImage: 'linear-gradient(315deg, #fdf86d 0%, #bddcf1 74%)'}}>
             <h4 className="m-3" style={{fontStyle: 'italic'}}>{entry.title }</h4>
             <h5 className="m-3">{(new Date(entry.createdAt)).toDateString()}</h5>
             <Link className="m-3 border border-black p-1" style={{textDecoration:'none', color:'black'}} to= {`/journal/${entry._id}`} >
                     VIEW ENTRY
                      </Link>
+                     
         </div>
       
       

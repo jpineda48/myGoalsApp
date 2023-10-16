@@ -1,4 +1,5 @@
 import { Form, Button, Container } from 'react-bootstrap'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 
@@ -7,12 +8,13 @@ const RoutineForm = (props) => {
   return (
     <div>
         <Container className='justify-content-center'>
-        <h3>Add an Task</h3>
+        <h3>Add to Your Routine</h3>
         <Form onSubmit={handleSubmit}>
                 <Form.Group className="m-2">
-                    <Form.Label>Task:</Form.Label>
+                    <Form.Label>Action:</Form.Label>
                     <Form.Control 
-                        placeholder="title of task?"
+                        style={{fontStyle: 'italic'}}
+                        placeholder="title of action"
                         id="task"
                         name="task"
                         value={ routine.task }
@@ -20,7 +22,7 @@ const RoutineForm = (props) => {
                     />
                 </Form.Group>
                 <Form.Group className="m-2">
-                <Form.Label>Goal Status:</Form.Label>
+                <Form.Label>Time of Day:</Form.Label>
                     <Form.Select 
                         aria-label="time_of_day"
                         name="time_of_day"
@@ -36,7 +38,9 @@ const RoutineForm = (props) => {
                 
               
                
-                <Button className='m-2' type='submit'> Submit</Button>
+                <Button className='m-2' style={{backgroundColor:'teal', border:'teal'}} type='submit'> Submit</Button>
+                <Button className='m-2' style={{backgroundColor:'teal', border:'teal'}} type='submit'><Link to={'/'} style={{color:'white', textDecoration:'none'}}>View My Routine</Link></Button>
+
                 
 
         </Form>

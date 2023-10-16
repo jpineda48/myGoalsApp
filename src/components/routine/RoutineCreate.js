@@ -30,7 +30,7 @@ const RoutineCreate = (props) => {
  const onSubmit = (e) => {
     e.preventDefault()
     createRoutine(user, routine)
-        .then(res => { navigate(`/routine/${res.data.routine._id}`)})
+        .then(res => { navigate(`/`)})
         .then(() => {
             msgAlert({
                 heading: 'Goal Created!',
@@ -51,8 +51,10 @@ const RoutineCreate = (props) => {
     return(
         <>
         <br/>
-        <small className='m-4' style={{color:'red'}}>Tips for Creating a Healthy Routine </small>
-        <br/>
+        <h1 style={{textAlign:'center',fontFamily:'PT Serif, serif'}}>My Routine</h1><br/>
+        <p style={{textAlign:'center', padding:'20px', fontSize:'20px'}}>Having a routine helps keep us <span style={{fontStyle: 'italic', color:'teal'}}>on track</span>  both mentally and physically, <br/>
+        which can help make our days more <span style={{fontStyle: 'italic', color:'teal'}}>positive</span> and <span style={{fontStyle: 'italic', color:'teal'}}>productive</span></p>
+					<hr/>
         <br/>
         <br/>
         <RoutineForm

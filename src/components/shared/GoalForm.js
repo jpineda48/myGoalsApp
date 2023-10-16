@@ -16,16 +16,17 @@ const GoalForm = (props) => {
   return (
     <div>
       <Container className='justify-content-center'>
-        <h3>{heading}</h3>
+        <h3 style={{fontFamily:'PT Serif, serif'}}>{heading}</h3>
         <Form onSubmit={handleSubmit}>
-        <Form.Group className="m-2">
+        <Form.Group className="m-4">
+                    <Form.Label style={{fontStyle: 'italic', color:'orange'}}>WHAT AREA OF LIFE ARE YOU FOCUSING ON?</Form.Label>
                     <Form.Select 
                         aria-label="catagory"
                         name="catagory"
                         defaultValue={ goal.catagory }
                         onChange={handleChange}
                     >
-                        <option>Open this select menu</option>
+                        <option>select an area</option>
                         <option value="Personal">Personal</option>
                         <option value="Financial">Financial</option>
                         <option value="Learning">Learning</option>
@@ -37,8 +38,8 @@ const GoalForm = (props) => {
                         <option value="Other">Other</option>
                     </Form.Select>
                 </Form.Group>
-                <Form.Group className="m-2">
-                    <Form.Label>Title:</Form.Label>
+                <Form.Group className="m-4">
+                    <Form.Label style={{fontStyle: 'italic', color:'orange'}}>TITLE YOURE GOAL TO BE MORE SPECIFIC</Form.Label>
                     <Form.Control 
                         placeholder="Title of Goal?"
                         id="title"
@@ -47,18 +48,18 @@ const GoalForm = (props) => {
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group className="m-2">
-                    <Form.Label>Progress Measurement:</Form.Label>
+                <Form.Group className="m-4">
+                    <Form.Label style={{fontStyle: 'italic', color:'orange'}}>HOW WILL YOU KEEP TRACK OF YOUR PROGRESS?</Form.Label>
                     <Form.Control 
-                        placeholder="When are you starting this goal?"
+                        placeholder="e.g., When I can bench 100lbs, I've achived this goal!"
                         id="progress_measurement"
                         name="progress_measurement"
                         value={ goal.progress_measurement }
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group className="m-2">
-                    <Form.Label>Decription:</Form.Label>
+                <Form.Group className="m-4">
+                    <Form.Label style={{fontStyle: 'italic', color:'orange'}}>DESCRIBE YOUR GOAL</Form.Label>
                     <Form.Control 
                         as="textarea" rows={5}
                         placeholder="Describe this goal?"
@@ -68,21 +69,21 @@ const GoalForm = (props) => {
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Form.Group className="m-2">
-                <Form.Label>Goal Status:</Form.Label>
+                <Form.Group className="m-4">
+                <Form.Label style={{fontStyle: 'italic', color:'orange'}}>WHAT IS THE STATUS OF THIS GOAL?</Form.Label>
                     <Form.Select 
                         aria-label="status"
                         name="status"
                         defaultValue={ goal.status }
                         onChange={handleChange}
                     >
-                        <option>Open this select menu</option>
+                        <option>select a status</option>
                         <option value="Not Started">Not Started</option>
                         <option value="In Progress">In Progress</option>
                         <option value="Finished">Finished</option>
                     </Form.Select>
                 </Form.Group>
-                <Button className='m-2' type='submit'> Submit</Button>
+                <Button className='m-4' style={{backgroundColor:'orange', border:'orange'}} type='submit'> Submit</Button>
                 
 
         </Form>

@@ -54,15 +54,17 @@ const GoalCreate = (props) => {
     return(
         <>
         <br/>
-        <small className='m-4'>Knowing your values and setting clear goals based on those values will help you live more intentionally. </small>
-        <br/>
+        <h1 style={{textAlign:'center',fontFamily:'PT Serif, serif'}}>My Goals</h1>
+        <p style={{textAlign:'center', padding:'20px', fontSize:'20px'}}>Having goals helps <span style={{fontStyle: 'italic', color:'orange'}}>focus</span>  attention on the things that are <span style={{fontStyle: 'italic', color:'orange'}}>important</span> .<br/>
+         It allows us to <span style={{fontStyle: 'italic', color:'orange'}}>create a vision</span>  of how we would like our life to be, <br/>increase the amount of time and effort we spend on an activity, and develop <span style={{fontStyle: 'italic', color:'orange'}}>effective</span>  achievement stratagies.</p>
+		<hr/>        
         <br/>
         <br/>
         <GoalForm 
         goal={goal} 
         handleChange={onChange} 
         handleSubmit={onSubmit}
-        heading="add a new goal"
+        heading="Add A Goal"
         />
         </>
     )
