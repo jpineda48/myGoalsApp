@@ -1,5 +1,6 @@
 # myGoalsApp
-![APPHEADER](https://github.com/jpineda48/myGoalsApp/assets/135978440/c5dec9f4-fc77-4a74-87a6-7c3354bd5303)
+
+![2](https://github.com/jpineda48/myGoalsApp/assets/135978440/0878ce23-0d68-4ec4-8158-841f04a4c372)
 
 
 ### Overview
