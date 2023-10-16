@@ -3,7 +3,7 @@
 
 
 ### Overview
-MyGoals is an app designed to help users keep organize, track and achive goals. 
+MyGoals is an app designed to help users keep organize, track and achive intention driven goals. This app takes into account elements of living with intention to create a more balanced, meaningful and purpose-driven life. Studies show that individuals who create healthy daily routines, set achievable goals and practice mindfulness, feel less anxiety and feel more energized and positive.   
 
 #### Technology Used:
 - React
