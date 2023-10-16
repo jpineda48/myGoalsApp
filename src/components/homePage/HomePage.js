@@ -8,7 +8,7 @@ const HomePage = () => {
 
     const fontStyle ={
         fontSize:'60px',
-        color: 'yellow',
+        color: 'teal',
         fontFamily:'PT Serif, serif',
         textShadow: '2px 2px black',
         textAlign:'left'
@@ -26,8 +26,11 @@ const HomePage = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5>First slide label</h5>
-          <p >Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <div style={fontStyle }>
+               
+           <p >Create a Daily Routine</p> 
+            </div>
+          
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -40,7 +43,7 @@ const HomePage = () => {
         <Carousel.Caption>
             <div style={fontStyle }>
                 
-                <p >Set intentions through goals.</p>
+                <p >Set Intention Driven Goals.</p>
                 <br/>
                 <br/>
             </div>
@@ -49,16 +52,17 @@ const HomePage = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block rounded-1"
+          className="d-block rounded-1 p-2"
           style={{height:'500px', opacity: '0.5'}}
           src="https://i.imgur.com/e7Mfh5J.jpg"
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h5 style={{color:'white'}}>Third slide label</h5>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <div style={fontStyle }>
+            <p>Keep Track of Visions and Thoughts</p>
+          </div>
+          
+          
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

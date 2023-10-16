@@ -54,7 +54,7 @@ const EntryCreate = (props) => {
         <>
         <br/>
         <h1 style={{textAlign:'center',fontFamily:'PT Serif, serif'}}>My Journal</h1>
-        <p style={{textAlign:'center', padding:'20px', fontSize:'20px'}}>Through <span style={{fontStyle: 'italic', color:'teal'}}>reflection</span> and <span style={{fontStyle: 'italic', color:'teal'}}>introspection</span>, <br/>
+        <p style={{textAlign:'center', padding:'20px', fontSize:'20px'}}>Through <span style={{fontStyle: 'italic', color:'pink'}}>reflection</span> and <span style={{fontStyle: 'italic', color:'pink'}}>introspection</span>, <br/>
         journaling helps you to get to know yourself better</p>
 					<hr/>
         

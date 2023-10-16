@@ -19,7 +19,7 @@ const authenticatedOptions = (
 		</Nav.Item>
 		<Nav.Item className='m-3'>
 			<Link to='moods' style={linkStyle}>
-			| &nbsp; INSPIRATION 
+			| &nbsp; VISION BOARD
 			</Link>
 		</Nav.Item>
 		<Nav.Item className='m-3'>
@@ -51,6 +51,7 @@ const unauthenticatedOptions = (
 	<>
         <Nav.Item className='m-3'>
 		    <Link to='sign-up' style={linkStyle}>
+			| &nbsp; SIGN UP
 				</Link>
         </Nav.Item>
         <Nav.Item className='m-3'>

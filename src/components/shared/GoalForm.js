@@ -39,7 +39,7 @@ const GoalForm = (props) => {
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="m-4">
-                    <Form.Label style={{fontStyle: 'italic', color:'orange'}}>TITLE YOURE GOAL TO BE MORE SPECIFIC</Form.Label>
+                    <Form.Label style={{fontStyle: 'italic', color:'orange'}}>TITLE YOUR GOAL TO BE MORE SPECIFIC</Form.Label>
                     <Form.Control 
                         placeholder="Title of Goal?"
                         id="title"

@@ -33,7 +33,7 @@ const RoutineCreate = (props) => {
         .then(res => { navigate(`/`)})
         .then(() => {
             msgAlert({
-                heading: 'Goal Created!',
+                heading: 'Action Created!',
                 message: createGoalSucess,
                 variant: 'success'
             })

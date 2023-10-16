@@ -60,7 +60,7 @@ const GoalsIndex = (props) => {
           <ul style={{ listStyleType: 'none'}}className={cardContainerLayout}>
             {categorizedGoals[category].map(goal => (
               <li key={goal._id}>
-                <Link to={`/goals/${goal._id}`}>
+                <Link to={`/goals/${goal._id}`} style={{textDecoration:'none', color:'black'}}>
                   {goal.title}
                 </Link>
               </li>

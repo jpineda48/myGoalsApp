@@ -35,7 +35,7 @@ const EntryForm = (props) => {
                 
               
                
-                <Button className='m-2' style={{backgroundColor:'teal', border:'teal'}} type='submit'> Submit</Button>
+                <Button className='m-2' style={{backgroundColor:'pink', border:'pink'}} type='submit'> Submit</Button>
                 
 
         </Form>

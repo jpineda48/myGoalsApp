@@ -42,10 +42,15 @@ const ImageUpload = () => {
     }
   return (
     <div>
+          <h1 style={{textAlign:'center',fontFamily:'PT Serif, serif'}}>My Vision Board</h1>
+        <p style={{textAlign:'center', padding:'20px', fontSize:'20px'}}>Collect images, chosen by you, to help <span style={{fontStyle: 'italic', color:'green'}}>visualise</span> your goals and intentions. </p>
+					<hr/>
       <form onSubmit={submitImage}>
+
         <input type='file' accept='image/*' onChange={onInputChange}></input>
         <button type='submit'>Submit</button>
       </form>
+
      {/* {allImage.map((data) => {
         return <img src={data.image} alt="moods" />
      })} */}

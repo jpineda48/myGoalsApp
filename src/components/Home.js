@@ -11,7 +11,7 @@ const cardContainerLayout = {
     display:'flex',
     flexFlow: 'row',
     justifyContent: 'center',
-	fontFamily: 'Poppins, sans-serif'
+
 	
 
 }
@@ -29,18 +29,19 @@ const Home = (props) => {
 	}
 	return (
 		<div className='container-md' style={cardContainerLayout}>
-		<Container className="m-2 border border-black" style={{textAlign: 'left'}}>
-			<p style={{fontStyle: 'italic', fontSize: '15px'}}> Having a routine helps keep us on track both mentally and physically, which can help make our days more positive and productive</p>
-			<h2 style={{fontSize:'2rem'}}>My Daily Routine <span style={{fontSize: '15px', fontWeight: 'bold'}}><br/>{n}</span></h2>
-			<RoutineIndex msgAlert={msgAlert} user={user}/>
-			<button className="m-4" ><Link to='routine' style={{textDecoration:'none'}}>
-				Add to My Routine
-			</Link></button>
-		</Container>
-		
-		<Container className="m-2 border border-black" style={{textAlign: 'left'}}>
+			<div style={{backgroundColor:'teal', width:'30px'}}></div>
+		<Container className="m-2 " style={{textAlign: 'left'}}>
 			
-			<h2 style={{fontSize:'2rem'}}>My Goals</h2>
+			<h2 style={{fontSize:'2rem', fontFamily:'PT Serif, serif'}}>My Daily Routine <span style={{fontSize: '15px', fontWeight: 'bold'}}><br/>{n}</span></h2>
+			<hr/>
+			<RoutineIndex msgAlert={msgAlert} user={user}/>
+		
+		</Container>
+		<div style={{backgroundColor:'salmon', width:'30px'}}></div>
+		<Container className="m-2 " style={{textAlign: 'left'}}>
+
+			<h2 style={{fontSize:'2rem', fontFamily:'PT Serif, serif'}}>My Goals</h2>
+			<hr/>
 			<GoalsIndex msgAlert={msgAlert} user={user}/>
 		</Container>
 		</div>

@@ -60,11 +60,13 @@ const App = () => {
 
 		return (
 				<Fragment>
-					<h1 style={{textAlign:'center', padding:'20px', fontFamily:'PT Serif, serif', fontSize:'60px'}}>MyGoals</h1>
+					<h1 style={{textAlign:'center', padding:'10px', fontFamily:'PT Serif, serif', fontSize:'60px'}}>MyGoals<br/>
+					{user && (
+					<span style={{fontSize:'15px'}}>Welcome, {user.email}</span>
+					
+				)}
+				</h1>
 					<hr/>
-					{/* {user && (
-					<span className='navbar-text' style={{fontSize:'1rem', color:'black',}}>Welcome, {user.email}</span>
-				)} */}
 					<Header user={user} />
 						<Routes>
 							<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />

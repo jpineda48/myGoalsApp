@@ -91,36 +91,7 @@ const EntryShow = (props)  => {
             onClick={()=> deleteEntry()}>
             Delete
         </Button>
-        {/* <Card>
-            <Card.Header style={{backgroundColor:'#fdf86d', backgroundImage: 'linear-gradient(315deg, #fdf86d 0%, #bddcf1 74%)', fontSize:'20px'}}>{entry.title}<br/>{date()}</Card.Header>
-            <Card.Body>
-                <Card.Text>
-                    {entry.body}
-                    
-                   
-                    
-                </Card.Text>
-            </Card.Body>
-            <Card.Footer style={{backgroundColor:'white'}}>
-
-          
-             
-                
-                
-                    <Button 
-                        className='m-2'
-                        onClick={() => setEditModalShow(true)}> 
-                        Edit
-                    </Button>
-                    <Button 
-                        className='m-2'
-                        onClick={()=> deleteEntry()}>
-                        Delete
-                    </Button>
-                    
-                
-            </Card.Footer>
-        </Card> */}
+       
         <Button style={{backgroundColor:'black', border:'black'}}><Link to={'/journal'} style={{color:'white', textDecoration:'none'}}>View All Entries</Link></Button>
         
         </Container>

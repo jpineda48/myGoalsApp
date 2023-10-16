@@ -90,7 +90,48 @@ const ShowGoal = (props)  => {
     return (
         <>
        <Container className='m-2'>
-        <Card>
+       <hr/>
+       <hr/>
+        <div>
+            <h1 className='p-4' style={{backgroundColor:'#fdf86d', backgroundImage: 'linear-gradient(315deg, #fdf86d 0%, #bddcf1 74%)', fontSize:'20px'}}> <span style={{fontFamily:'PT Serif, serif', fontSize:'30px'}}>{goal.title}</span></h1>
+        </div>
+        <div>
+        <p className='p-3' style={{fontSize:'25px'}}> <span style={{fontFamily:'PT Serif, serif'}}>Area:</span>  {goal.catagory}</p>
+        <p className='p-3' style={{fontSize:'25px'}}> <span style={{fontFamily:'PT Serif, serif'}}>Measure of Progress:</span> {goal.progress_measurement}</p>
+        <p className='p-3' style={{fontSize:'25px'}}> <span style={{fontFamily:'PT Serif, serif'}}>Description:</span> {goal.description}</p>
+        <p className='p-3' style={{fontSize:'25px'}}> <span style={{fontFamily:'PT Serif, serif'}}>Status:</span> {goal.status}</p>
+       
+        </div>
+                    <Button 
+                        style={{backgroundColor:'black', border:'black'}}
+                        className='m-2' 
+
+                        onClick={() => setActionModalShow(true)}
+                        >
+                        create actions
+                    </Button>
+                    
+                
+                
+                    <Button 
+                        style={{backgroundColor:'black', border:'black'}}
+                        className='m-2'
+                        onClick={() => setEditModalShow(true)}> 
+                        Edit
+                    </Button>
+                    <Button 
+                        style={{backgroundColor:'black', border:'black'}}
+                        className='m-2'
+                        onClick={()=> deleteGoal()}>
+                        Delete
+                    </Button>
+                    <br/>
+                    <small>*Create More Specific Actions to Help You Get Closer to Your Goal </small>
+                    <hr/>
+                    <h3 style={{fontFamily:'PT Serif, serif'}}>ACTIONS:</h3>
+
+
+        {/* <Card>
             <Card.Header><span style={{color: "red", fontSize:'2rem'}}>The Goal:</span> {goal.title}</Card.Header>
             <Card.Body>
                 <Card.Text>
@@ -122,7 +163,7 @@ const ShowGoal = (props)  => {
                     
                 
             </Card.Footer>
-        </Card>
+        </Card> */}
         
         </Container>
 

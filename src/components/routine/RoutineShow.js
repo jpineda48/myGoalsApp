@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import{ useParams} from 'react-router-dom'
+import{ useParams, Link} from 'react-router-dom'
 import { Container, Card, CardFooter, Button } from 'react-bootstrap'
 import { getOneRoutine, updateRoutine, removeRoutine } from '../../api/routine'
 import {removeGoalFailure, removeGoalSucess, showGoalFailure }from '../shared/AutoDismissAlert/messages'
@@ -71,7 +71,34 @@ const ShowRoutine = (props)  => {
 
     return (
         <>
-       <Container className='m-2'>
+         <hr/>
+        <div>
+            <h1 className='p-4 m-3' style={{backgroundColor:'#fdf86d', backgroundImage: 'linear-gradient(315deg, #fdf86d 0%, #bddcf1 74%)', fontSize:'20px'}}> <span style={{fontFamily:'PT Serif, serif', fontSize:'30px'}}>{routine.task}</span></h1>
+        </div>
+        <div>
+        <p className='p-3 m-3' style={{fontSize:'25px'}}>{routine.time_of_day}</p>
+        </div>
+       
+       
+        <Button 
+            style={{backgroundColor:'black', border:'black'}}
+            className='m-2'
+            onClick={() => setEditModalShow(true)}> 
+            Edit
+        </Button>
+        <Button 
+            style={{backgroundColor:'black', border:'black'}}
+            className='m-2'
+            onClick={()=> deleteRoutine()}>
+            Delete
+        </Button>
+        <Button 
+            style={{backgroundColor:'black', border:'black'}}>
+                <Link to={'/'} style={{color:'white', textDecoration:'none'}}>View My Routine
+                </Link>
+        </Button>
+       
+       {/* <Container className='m-2'>
         <Card>
             <Card.Header><span style={{color: "red", fontSize:'2rem'}}>The Task:</span> {routine.task}</Card.Header>
             <Card.Body>
@@ -99,7 +126,7 @@ const ShowRoutine = (props)  => {
             </Card.Footer>
         </Card>
         
-        </Container>
+        </Container> */}
 
       
         <EditRoutineModal 
